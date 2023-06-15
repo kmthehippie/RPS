@@ -4,7 +4,7 @@ const compChoice = document.querySelector(".comp-choice");
 const playerChoice = document.querySelector(".player-choice");
 const resultA = document.querySelector(".result-a");
 const resultB = document.querySelector(".result-b");
-const score = document.querySelector(".score");
+const resultC = document.querySelector(".result-c");
 const button = document.querySelector("button");
 
 
@@ -34,7 +34,8 @@ let getCompChoice = function(){
     }
 }
 
-let scoreResult = 0;
+let playerScoreResult = 0;
+let compScoreResult = 0;
 
 //create a function play that takes player selection and comp selection
 let playRound = function (player, comp){
@@ -44,7 +45,7 @@ let playRound = function (player, comp){
     compChoice.append(compResult + " ")
     playerChoice.append(playerResult + " ")
     console.log(`Player has chosen: ${player}`);
-    console.log(`Computer result is: ${comp}`);
+    console.log(`Computer has chosen: ${comp}`);
     
 
 
@@ -55,27 +56,30 @@ let playRound = function (player, comp){
         if (comp === "rock"){
             return para.textContent = "Tie!";
         } else if (comp === "paper"){
+            compScoreResult ++;
             return para.textContent = "You Lose!";
         } else if (comp === "scissors"){
-            scoreResult = scoreResult +1;
+            playerScoreResult = playerScoreResult +1;
             return para.textContent = "You Win!";
         };
     } else if (player === "paper"){
         if(comp === "paper"){
             return para.textContent = "Tie!";
         } else if (comp === "scissors"){
+            compScoreResult ++;
             return para.textContent = "You Lose!";
         } else if (comp === "rock"){
-            scoreResult ++;
+            playerScoreResult ++;
             return para.textContent = "You Win!";
         }
     } else if (player === "scissors"){
         if (comp === "scissors"){
             return para.textContent = "Tie!";
         } else if (comp === "rock"){
+            compScoreResult ++;
             return para.textContent = "You Lose!";
         } else if(comp === "paper"){
-            scoreResult ++;
+            playerScoreResult ++;
             return para.textContent = "You Win!";
         };
     } else {
@@ -88,30 +92,24 @@ let playRound = function (player, comp){
 
 //create a scoreResult variable for the player
 let game = function() {
-        for (let gamesPlayed = 0; gamesPlayed < 5; gamesPlayed++){
-            
-            let playResult = playRound(askPlayer(), getCompChoice());
+
+    let playResult = playRound(askPlayer(), getCompChoice());
+
+    resultA.append(playResult + " ");
+    resultB.textContent = `${playerScoreResult} | ${compScoreResult}`
+    console.log(playerScoreResult);
+    console.log(compScoreResult);
     
-            console.log(playResult);
-            resultA.append(playResult + " ");
-            score.append(scoreResult + " ");
-            console.log(scoreResult);
-  
-        }
-        if (scoreResult >= 3){
-            console.log ("Winner!");
-            resultB.append(`${scoreResult} / 5
-            Winner!`);
-            return
-        } else if (scoreResult === 2){
-            console.log ("Tie!");
-            resultB.append(`${scoreResult} / 5
-            Tie!`)
-        } else {
-            console.log("Try Again")
-            resultB.append(`${scoreResult} / 5
-            Try Again!`)
-        }
+    if (playerScoreResult === 5){
+        playerScoreResult = 0;
+        compScoreResult = 0;
+        resultC.textContent = "Winner Winner Chicken Dinner!"; 
+        
+    } else if (compScoreResult === 5) {
+        playerScoreResult = 0;
+        compScoreResult = 0;
+        resultC.textContent = "You lost to the computer. Try Again?"; 
+    }       
 };
 
 
@@ -120,9 +118,7 @@ button.addEventListener("click", ()=>{
     compChoice.textContent = "";
     playerChoice.textContent = "";
     resultA.textContent = "";
-    score.textContent = "";
     resultB.textContent = "";
-    scoreResult = 0;
     game();
 });
 
