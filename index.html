@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
-
+    <script src="script2.js" defer></script>
 </head>
 <body>
     <h1>This is RPS, baby!</h1>
+
+<button id="rock">Rock</button>
+<button id="paper">Paper</button>
+<button id="scissors">Scissors</button>
+
 <p>The computer has chosen: </p>
 <div class="comp-choice"></div>
 <p>The player has chosen:</p>
 <div class="player-choice"></div>
-<p>Result:</p>
-<div class="result-a"></div>
-<p>.......</p>
 
-<button>Click</button>
-<p>Your Score VS Computer Score</p>
-<div class="result-b"></div>
-<p>.......</p>
-<div class="result-c"></div>
 
-<script src="./script.js"></script>
+<!-- Removed p texts for Result. Rearranged Your score vs comp score-->
+<!-- <p>Result:</p> -->
+<!-- <p>Your Score VS Computer Score</p> -->
+<p>The Player's Score is:</p>
+<div class="result-a player-score"></div>
+<p>The Computer's Score is:</p>
+<div class="result-b comp-score"></div>
+<div class="result-c text-result"></div>
+
+<!-- <script src="./script.js"></script> -->
 </body>  
 </html>
