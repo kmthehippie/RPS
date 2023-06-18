@@ -23,3 +23,7 @@ Rock Paper Scissors.
 3. At 5th score (for either comp or player) reset score to 0
 4. Prints after the 5th score: winner or Try again
 5. Also remember that div.textContent = "string" works. (This works better than append which requires NODE)
+
+18 June
+- Updated UI
+- Reworked JS and HTML files
