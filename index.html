@@ -5,29 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
     <script src="script2.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>This is RPS, baby!</h1>
 
-<button id="rock">Rock</button>
-<button id="paper">Paper</button>
-<button id="scissors">Scissors</button>
+<div class="container">
+    <div class="header">
+        <h1>This is RPS, baby!</h1>
+    </div>
 
-<p>The computer has chosen: </p>
-<div class="comp-choice"></div>
-<p>The player has chosen:</p>
-<div class="player-choice"></div>
+    <div class="player-selection">
+        <div id="select"><img src="images/rock.png" alt="rock" id="rock"></div>
+        <div id="select"><img src="images/paper.png" alt="paper" id="paper"></div>
+        <div id="select"><img src="images/scissors.png" alt="scissors" id="scissors"></div>
+        <!-- <img src="images/rock.png" alt="rock" id="rock">
+        <img src="images/paper.png" alt="paper" id="paper">
+        <img src="images/scissors.png" alt="scissors" id="scissors"> -->
+        <!-- <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id="scissors">scissors</button> -->
+    </div>
+
+    <div class="selected">
+        <div class="comp-select">
+            <p>The computer has chosen: </p> 
+            <div class="comp-choice"></div>
+        </div>
+        <div class="modal text-result"></div>
+        <div class="player-select">
+            <p>The player has chosen:</p> 
+            <div class="player-choice"></div>
+        </div>   
+    </div>
 
 
-<!-- Removed p texts for Result. Rearranged Your score vs comp score-->
-<!-- <p>Result:</p> -->
-<!-- <p>Your Score VS Computer Score</p> -->
-<p>The Player's Score is:</p>
-<div class="result-a player-score"></div>
-<p>The Computer's Score is:</p>
-<div class="result-b comp-score"></div>
-<div class="result-c text-result"></div>
+    <div class="results">
+        <div class="player-result">
+            <p>The Player's Score is:</p>
+            <div class="result-a player-score"></div>
+        </div>
 
-<!-- <script src="./script.js"></script> -->
+        <div class="comp-result">
+            <p>The Computer's Score is:</p>
+            <div class="result-b comp-score"></div>
+        </div>
+    </div>
+
+        <!-- Removed p texts for Result. Rearranged Your score vs comp score-->
+        <!-- <p>Result:</p> -->
+        <!-- <p>Your Score VS Computer Score</p> -->
+        <!-- <p>The Player's Score is:</p>
+        <div class="result-a player-score"></div>
+        <p>The Computer's Score is:</p>
+        <div class="result-b comp-score"></div>
+        <div class="result-c text-result"></div> -->
+
+        <!-- <script src="./script.js"></script> -->
+    <div class="footer">
+        <p><a href="https://www.flaticon.com/free-icons/fist" title="fist icons">Fist icons created by vectorspoint - Flaticon</a>
+        </p>
+        <p><a href="https://www.flaticon.com/free-icons/scissor" title="scissor icons">Scissor icons created by juicy_fish - Flaticon</a>
+        </p>
+        <p><a href="https://www.flaticon.com/free-icons/scissor" title="scissor icons">Scissor icons created by juicy_fish - Flaticon</a>
+        </p>        
+        <p>Photo by Ivy Son: https://www.pexels.com/photo/plastic-bag-texture-3490393/
+        </p>    
+    </div>
+</div>
+    
 </body>  
 </html>
